@@ -1,0 +1,9 @@
+package com.app.pojos;
+
+public class Employee {
+	
+	private itn empId;
+	private String name,email,role;
+	private
+
+}

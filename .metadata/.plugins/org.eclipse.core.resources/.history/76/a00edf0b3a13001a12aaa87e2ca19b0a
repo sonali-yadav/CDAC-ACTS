@@ -1,0 +1,29 @@
+package com.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.app.service.IBookService;
+
+@Controller
+@RequestMapping("/books")
+public class BookController {
+
+	public BookController() {
+		super();
+	}
+	
+	@Autowired
+	private IBookService bservice;
+	
+	//REQUEST HANDLING METHOD TO RETURN A VIEW WITH A LIST OF BOOKS FOR A PARTICULAR AUTHOR
+	@GetMapping("/list")
+	public String getBooksByAuthor(@RequestParam(name = "author") int auth, Model map) {
+		map.addAttribute("bookList", bservice.getBooksByAuthor(author));
+		return "/books/list";
+	}
+}

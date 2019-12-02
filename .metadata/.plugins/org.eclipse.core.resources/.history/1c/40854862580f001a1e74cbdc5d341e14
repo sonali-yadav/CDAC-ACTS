@@ -1,0 +1,25 @@
+package utils;
+
+import java.util.HashMap;
+
+import cust_exception.CustomerHandlingException;
+import pojos.Customer;
+
+public class CustomerUtils {
+
+	//0. Validate Customer Login
+	public static Customer validateCustomerlogin(String cEmail,String cPass,HashMap<String, Customer> custMap) throws CustomerHandlingException {
+		Customer c=custMap.get(cEmail);
+		if (c!=null) {
+			return c;
+		} else
+			throw new CustomerHandlingException("Invalid Login, Please retry!");
+	}
+	//1. update customer address &mobile number
+	public static Customer updateCustomerDetails(Customer c,String newCity,String newMobile){
+		c.setAddress(newCity);
+		c.setMobile(newMobile);
+		return c;
+	}
+	//2. client sends the name of city. server sends back list of customer from specified city sorted as per dob.
+}

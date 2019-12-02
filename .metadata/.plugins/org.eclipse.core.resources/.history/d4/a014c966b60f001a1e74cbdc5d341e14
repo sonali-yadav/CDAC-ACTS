@@ -1,0 +1,10 @@
+package com.app.pojos;
+
+public class Employee {
+	
+	private static int counter;
+	private int empId;
+	private String name,email,role;
+	private
+
+}

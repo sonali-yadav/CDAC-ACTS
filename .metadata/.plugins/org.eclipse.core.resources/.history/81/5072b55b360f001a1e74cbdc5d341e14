@@ -1,0 +1,19 @@
+package tester;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class StockExchangeTester {
+
+	public static void main(String[] args) {
+		try(Scanner sc=new Scanner(System.in)) {
+			
+		} catch(SQLException ex) {
+			System.out.println(ex);
+		} catch(ClassNotFoundException ex1) {
+			System.out.println(ex1);
+		}
+
+	}
+
+}

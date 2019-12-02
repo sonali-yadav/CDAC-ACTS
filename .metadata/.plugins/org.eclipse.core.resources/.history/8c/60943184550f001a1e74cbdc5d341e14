@@ -1,0 +1,21 @@
+package utils;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.HashMap;
+
+import pojos.Bill;
+import pojos.Customer;
+
+public class BillUtils {
+
+	//1. Client sends his/her mobile number to TCP server. Server sends back current month bill.
+	public static Bill getCurrentBill(String cMobile, HashMap<String, Customer> custMap) {
+		Bill b=custMap.get(cMobile).getBills().get(LocalDate.now().getMonth());
+		return b;
+	}
+	
+	//2. Client sends his/her mobile number to TCP server. Server sends back bills for last 6 months
+	//3. Client sends his/her name & birth date. Server sends back current month bill.
+	//4. Admin user asks for the name of user with max bill in past 6 month, server sends it back.
+}

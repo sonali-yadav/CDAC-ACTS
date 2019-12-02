@@ -1,0 +1,9 @@
+package pojos;
+
+import java.time.LocalDate;
+
+public class Customer {
+	private String custName, custMobile;
+	private LocalDate custDob;
+
+}

@@ -1,0 +1,31 @@
+package tester;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import dao.StockDaoImpl;
+
+public class StockExchangeTester {
+
+	public static void main(String[] args) {
+		int choice=0;
+		try (Scanner sc = new Scanner(System.in);) {
+			StockDaoImpl sdao = new StockDaoImpl();
+			do {
+				System.out.println("***MENU***");
+				System.out.println("");
+				System.out.println("");
+				System.out.println("");
+				System.out.println("");
+				System.out.println("");
+				System.out.println("Enter your choice:");
+			} while(choice!=0);
+		} catch (SQLException ex) {
+			System.out.println(ex);
+		} catch (ClassNotFoundException ex1) {
+			System.out.println(ex1);
+		}
+
+	}
+
+}

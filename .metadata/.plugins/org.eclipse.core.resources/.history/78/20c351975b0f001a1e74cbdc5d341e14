@@ -1,0 +1,49 @@
+package utils;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+
+import cust_exception.CustomerHandlingException;
+import pojos.Customer;
+
+public class CustomerUtils {
+
+	// 0. Validate Customer Login
+	public static Customer validateCustomerlogin(String cEmail, String cPass, HashMap<String, Customer> custMap)
+			throws CustomerHandlingException {
+		Customer c = custMap.get(cEmail);
+		if (c != null) {
+			return c;
+		} else
+			throw new CustomerHandlingException("Invalid Login, Please retry!");
+	}
+
+	// 1. update customer address &mobile number
+	public static Customer updateCustomerDetails(Customer c, String newCity, String newMobile) {
+		c.setAddress(newCity);
+		c.setMobile(newMobile);
+		return c;
+	}
+	
+	// 2. client sends the name of city. server sends back list of customer from specified city sorted as per dob.
+	public static ArrayList<Customer> getCustomersByCity(HashMap<String, Customer> custMap, String city) {
+		Collection<Customer> values = custMap.values(); 
+		ArrayList<Customer> al=new ArrayList<Customer>(values);
+		Collections.sort(al);
+		return al;
+	}
+	
+	//Data Population
+	public static HashMap<String, Customer> populateData() {
+		HashMap<String, Customer> cmap = new HashMap<>();
+		cmap.put("r@gmail",new Customer("r@gmail", "12345", "Pune", "112233445", LocalDate.parse("1998-28-11")));
+		cmap.put("s@gmail",new Customer("s@gmail","456123", "Pune", "112233445", LocalDate.parse("1998-24-10")));
+		cmap.put("k@gmail",new Customer("k@gmail","112233", "Pune", "112233445", LocalDate.parse("1998-20-9")));
+		cmap.put("a@gmail",new Customer("a@gmail","445566", "Pune", "112233445", LocalDate.parse("1998-16-8")));
+		cmap.put("b@gmail",new Customer("b@gmail","010101", "Pune", "112233445", LocalDate.parse("1998-12-7")));
+		return cmap;
+	}
+}

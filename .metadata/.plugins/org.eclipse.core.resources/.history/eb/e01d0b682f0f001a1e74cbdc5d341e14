@@ -1,0 +1,16 @@
+package pojo;
+
+import java.time.LocalDate;
+
+public class Stock {
+
+	private static int counter;
+	private int id,quantity;
+	private String name,company;
+	private double price;
+	private LocalDate closingDate;
+	
+	public Stock() {
+		// TODO Auto-generated constructor stub
+	}
+}

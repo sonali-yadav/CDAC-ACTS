@@ -1,0 +1,48 @@
+package client;
+
+import java.net.Socket;
+import java.util.Scanner;
+
+public class CustomerHandlingClient {
+
+	public static void main(String[] args) {
+		System.out.println("Enter remote IP and remote port");
+		boolean exit = false;
+		try (Scanner sc = new Scanner(System.in); 
+				Socket s1 = new Socket(sc.next(), sc.nextInt())) {
+			System.out.println("connected to server IP" + s1.getInetAddress().getHostName() + " server  port "
+					+ s1.getPort() + " clnt port " + s1.getLocalPort());
+			
+			// attaching the data streams
+			try (// DOS
+					DataOutputStream out = new DataOutputStream(s1.getOutputStream());
+					ObjectInputStream in = new ObjectInputStream(s1.getInputStream())) {
+
+				while (!exit) {
+					System.out.println("1: Get max sal emp 10:Exit");
+					System.out.println("Choose option");
+					switch (sc.nextInt()) {
+					case 1:
+						//send cmd to server
+						out.writeInt(1);
+						System.out.println("Enter dept ID ");
+						//send dept id to server
+						out.writeUTF(sc.next());
+						//display resp
+						System.out.println("Max sal emp "+in.readObject());
+						break;
+
+					case 10:
+						exit=true;
+						break;
+					}
+					sc.nextLine();
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

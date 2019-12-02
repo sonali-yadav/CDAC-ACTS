@@ -1,0 +1,46 @@
+package server;
+
+import java.util.HashMap;
+
+import pojos.Customer;
+import static utils.CustomerUtils.*;
+
+public class CustomerHandlingServer {
+
+	public static void main(String[] args) {
+		System.out.println("Server Up. Waiting for client...");
+		HashMap<String, Customer> org = populateData;
+		try (// ss
+				ServerSocket ss = new ServerSocket(5000, 1);
+				// accept
+				Socket ds = ss.accept();) {
+			System.out.println("cn accepted from Clnt IP " + ds.getInetAddress().getHostName() + " rem port "
+					+ ds.getPort() + " server port  " + ds.getLocalPort());
+			try (ObjectOutputStream out = new ObjectOutputStream(ds.getOutputStream());
+
+			) {//send strm header to the clnt explicitely
+				out.flush();
+				DataInputStream in = new DataInputStream(ds.getInputStream());
+				while (true) {
+					switch (in.readInt()) {
+					case 1: // display max salaried emp by dept
+						// read dept id
+						writeData(out, sortEmpsBySal(org.get(in.readUTF()).getEmps()));
+
+						break;
+
+					case 10: // exit
+						break;
+					}
+				}
+			}
+		} catch (Exception e) {
+			/*
+			 * if (e instanceof EOFException)
+			 * System.out.println("clnt appln terminated... shutting down server"); else
+			 */			e.printStackTrace();
+		}
+
+	}
+
+}

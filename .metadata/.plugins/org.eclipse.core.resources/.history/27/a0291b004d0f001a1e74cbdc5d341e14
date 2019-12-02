@@ -1,0 +1,11 @@
+package pojos;
+
+import java.time.LocalDate;
+
+public class Bill {
+
+	private int billNo;
+	private double billAmount;
+	private String custName,custMobile;
+	private LocalDate custDob;
+}

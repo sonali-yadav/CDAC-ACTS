@@ -1,0 +1,9 @@
+package dao;
+
+public interface IStockDao {
+
+	//1. Delete stock record from DB
+	String deleteStockRecord(String companyName);
+	//2. Add new stock 
+	//3. Update stock values
+}

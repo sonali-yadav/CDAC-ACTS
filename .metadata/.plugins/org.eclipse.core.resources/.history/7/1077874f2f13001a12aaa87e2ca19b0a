@@ -1,0 +1,65 @@
+package com.app.pojos;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "books")
+public class Book {
+
+	private Integer bookId;
+	private String bookTitle;
+	private LocalDate publishDate;
+	private Author author;
+
+	public Book() {
+		super();
+		System.out.println("inside Book()");
+	}
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Integer getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(Integer bookId) {
+		this.bookId = bookId;
+	}
+
+	@Column(length = 30)
+	public String getBookTitle() {
+		return bookTitle;
+	}
+
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
+	}
+
+	public LocalDate getPublishDate() {
+		return publishDate;
+	}
+
+	public void setPublishDate(LocalDate publishDate) {
+		this.publishDate = publishDate;
+	}
+
+	@ManyToOne
+	@JoinColumn(name = "author_id")
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
+}

@@ -1,0 +1,41 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import static utils.ConnectionProvider.*;
+import pojo.Stock;
+
+public class StockDaoImpl implements IStockDao {
+
+	private Connection con;
+	private PreparedStatement pst1, pst2, pst3, pst4;
+
+	public StockDaoImpl() throws SQLException, ClassNotFoundException {
+		super();
+		con = getConnection();
+		pst1 = con.prepareStatement("");
+		pst2 = con.prepareStatement("");
+		pst3 = con.prepareStatement("");
+		pst4 = con.prepareStatement("");
+	}
+
+	@Override
+	public String deleteStockRecord(String companyName) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String addNewStock(Stock s) throws SQLException {
+
+		return null;
+	}
+
+	@Override
+	public String updateStockValues(String cName, double price, int quantity) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

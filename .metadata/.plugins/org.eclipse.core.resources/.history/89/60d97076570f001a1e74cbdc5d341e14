@@ -1,0 +1,14 @@
+package utils;
+
+import pojos.Customer;
+
+public class CustomerUtils {
+
+	//1. update customer address &mobile number
+	public static String updateCustomerDetails(Customer c,String newCity,String newMobile){
+		c.setAddress(newCity);
+		c.setMobile(newMobile);
+		return "";
+	}
+	//2. client sends the name of city. server sends back list of customer from specified city sorted as per dob.
+}

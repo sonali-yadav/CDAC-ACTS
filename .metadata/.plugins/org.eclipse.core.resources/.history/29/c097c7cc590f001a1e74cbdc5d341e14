@@ -1,0 +1,17 @@
+package utils;
+
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+import pojos.Customer;
+
+public class ServerUtils {
+
+		//static method to send Customer data to client
+		public static void writeData(ObjectOutputStream out,Customer cust) throws IOException
+		{
+			out.writeObject(cust);
+		}
+	}
+
+}

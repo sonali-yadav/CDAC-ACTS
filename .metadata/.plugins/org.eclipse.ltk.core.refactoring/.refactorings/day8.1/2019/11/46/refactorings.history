@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;hibernate.cfg.xml&apos; to &apos;VendorManagement/resources&apos;&#x0D;&#x0A;- Original project: &apos;day8.1&apos;&#x0D;&#x0A;- Destination element: &apos;VendorManagement/resources&apos;&#x0D;&#x0A;- Original element: &apos;hibernate.cfg.xml&apos;" description="Copy file" destination="=VendorManagement/resources" element1="resources/hibernate.cfg.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1573727642320" units="0" version="1.0"/>
+</session>

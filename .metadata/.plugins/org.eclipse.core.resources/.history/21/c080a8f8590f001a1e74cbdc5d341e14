@@ -1,0 +1,34 @@
+package server;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.*;
+
+public class HelloServer {
+
+	public static void main(String[] args) {
+		System.out.println("waiting for clnt.....");
+		try (// ss
+				ServerSocket ss = new ServerSocket(5000, 1);
+				// accept
+				Socket ds = ss.accept();) {
+			System.out.println("cn accepted from Clnt IP " 
+				+ ds.getInetAddress().getHostName() + " rem port "
+					+ ds.getPort() + " server port  " 
+				+ ds.getLocalPort());
+			try(DataOutputStream out=new DataOutputStream(ds.getOutputStream());
+				DataInputStream in=new DataInputStream(ds.getInputStream())
+					)
+			{
+				//read req
+				System.out.println("clnt's req "+in.readUTF());
+				//send resp
+				out.writeUTF("I m good ! Bye!!!!!!");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

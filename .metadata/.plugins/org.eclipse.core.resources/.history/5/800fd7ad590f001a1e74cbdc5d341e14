@@ -1,0 +1,12 @@
+package utils;
+
+public class ServerUtils {
+
+		//write static method to send emp data to clnt
+		public static void writeData(ObjectOutputStream out,Emp e) throws IOException
+		{
+			out.writeObject(e);
+		}
+	}
+
+}

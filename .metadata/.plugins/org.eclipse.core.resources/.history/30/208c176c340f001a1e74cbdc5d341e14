@@ -1,0 +1,17 @@
+package dao;
+
+import java.sql.SQLException;
+
+import pojo.Stock;
+
+public interface IStockDao {
+
+	// 1. Delete stock record from DB
+	String deleteStockRecord(String companyName) throws SQLException;
+
+	// 2. Add new stock
+	String addNewStock(Stock s) throws SQLException;
+
+	// 3. Update stock values
+	String updateStockValues(String cName, double price, int quantity) throws SQLException;
+}

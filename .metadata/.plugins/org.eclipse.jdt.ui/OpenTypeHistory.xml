@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=OnlineVotingSpring/src&lt;com.app.dao{VoterDao.java[VoterDao" modifiers="513" timestamp="1574161698653"/>
+<typeInfo handle="=OnlineVotingSpring/src&lt;com.app.dao{CandidateDao.java[CandidateDao" modifiers="513" timestamp="1574161695052"/>
+<typeInfo handle="=ProductManagement/src&lt;com.app.dao{IProductDao.java[IProductDao" modifiers="513" timestamp="1574244793250"/>
+<typeInfo handle="=ProductManagement/F:\/dac\/advanced_java\/day10_data\/day10_help\/spring-help\/spring-hibernate-rest-jars\/hibernate-core-5.2.6.Final.jar&lt;org.hibernate.jpa.boot.spi(IntegratorProvider.class[IntegratorProvider" modifiers="1537" timestamp="1484902342000"/>
+<typeInfo handle="=ProductManagement/F:\/dac\/advanced_java\/day10_data\/day10_help\/spring-help\/spring-hibernate-rest-jars\/spring-core-5.2.0.RELEASE.jar&lt;org.springframework.core(InfrastructureProxy.class[InfrastructureProxy" modifiers="1537" timestamp="1572516086000"/>
+<typeInfo handle="=StudentLabEval2/src&lt;com.app.service{ICourseService.java[ICourseService" modifiers="513" timestamp="1574421216257"/>
+<typeInfo handle="=StudentLabEval2/src&lt;com.app.service{IStudentService.java[IStudentService" modifiers="513" timestamp="1574424398495"/>
+<typeInfo handle="=StudentLabEval2/src&lt;com.app.dao{ICourseDao.java[ICourseDao" modifiers="513" timestamp="1574421269123"/>
+<typeInfo handle="=StudentLabEval2/src&lt;com.app.dao{IStudentDao.java[IStudentDao" modifiers="513" timestamp="1574424442360"/>
+<typeInfo handle="=CorePractice3/src&lt;dao{IStockDao.java[IStockDao" modifiers="513" timestamp="1574652895730"/>
+</typeInfoHistroy>

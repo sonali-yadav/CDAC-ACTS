@@ -1,0 +1,64 @@
+package com.app.tester;
+
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Scanner;
+
+import com.app.daos.BlogDaoImpl;
+import com.app.daos.BloggerDaoImpl;
+import com.app.pojos.Blog;
+
+public class BlogsAppTester {
+
+	public static void main(String[] args) {
+
+		int choice = 0;
+		try (Scanner sc = new Scanner(System.in);) {
+			BlogDaoImpl blogDao = new BlogDaoImpl();
+			BloggerDaoImpl bloggerDao = new BloggerDaoImpl();
+			do {
+				System.out.println("***WELCOME TO BLOGGER'S POINT***");
+				System.out.println("1. Show all posts of a particular blogger.");
+				System.out.println("2. Show all posts within a particular date range.");
+				System.out.println("0. Exit the menu.");
+				System.out.println("Enter your choice: ");
+				choice = sc.nextInt();
+
+				switch (choice) {
+				case 1:
+					System.out.println("Enter blogger name:");
+					String bName = sc.next();
+					List<Blog> blogs = bloggerDao.getPostsByBloggerName(bName);
+					for (Blog blog : blogs) {
+						System.out.println(blog);
+					}
+					if (blogs.size()==0) {
+						System.out.println("No Blogs found for "+bName+"!");
+					}
+					break;
+				case 2:
+					System.out.println("Enter Start Date & End Date in format: [yyyy-MM-dd]");
+					List<Blog> blogs2 = blogDao.getAllPostsWithinDateRange(Date.valueOf(sc.next()),
+							Date.valueOf(sc.next()));
+					for (Blog blog : blogs2) {
+						System.out.println(blog);
+					}
+					if (blogs2.size()==0) {
+						System.out.println("No Blogs found in this range!");
+					}
+					break;
+				case 0:
+					System.out.println("Thanks for using the application! Shutting down.");
+					break;
+				default:
+					break;
+				}
+			} while (choice != 0);
+		} catch (ClassNotFoundException e) {
+			System.out.println("Class Not found->" + e);
+		} catch (SQLException e1) {
+			System.out.println("SQLException->" + e1);
+		}
+	}
+}

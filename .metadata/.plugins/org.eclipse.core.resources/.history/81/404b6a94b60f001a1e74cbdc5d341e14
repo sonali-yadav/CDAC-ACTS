@@ -1,0 +1,13 @@
+package com.app.pojos;
+
+import java.time.LocalDate;
+
+public class Employee {
+	
+	private static int counter;
+	private int empId;
+	private String name,email,role;
+	private LocalDate joinDate;
+	private boolean isPermanent;
+
+}

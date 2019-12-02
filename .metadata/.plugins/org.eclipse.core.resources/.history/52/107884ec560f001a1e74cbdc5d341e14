@@ -1,0 +1,16 @@
+package pojos;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.HashMap;
+
+public class Customer {
+	private String email,password,address,mobile;
+	private LocalDate dob;
+	
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+}

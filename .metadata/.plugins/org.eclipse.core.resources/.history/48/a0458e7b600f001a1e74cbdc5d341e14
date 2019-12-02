@@ -1,0 +1,13 @@
+package srvr;
+import static javax.swing.JOptionPane.showInputDialog;
+
+import java.util.Scanner;
+public class TestDialogBox {
+
+	public static void main(String[] args) {
+		String input=showInputDialog("Enter 2 nums to multiply");
+		Scanner sc=new Scanner(input);
+		System.out.println("product="+(sc.nextInt()*sc.nextInt()));
+	}
+
+}

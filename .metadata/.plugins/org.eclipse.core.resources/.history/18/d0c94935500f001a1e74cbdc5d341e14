@@ -1,0 +1,38 @@
+package pojos;
+
+import java.time.LocalDate;
+
+public class Bill {
+
+	private static int billCounter;
+	private int billNo;
+	private double billAmount;
+	private String custName, custMobile;
+	private LocalDate custDob;
+	
+	public Bill() {
+		super();
+		billNo=++billCounter;
+	}
+
+	public Bill(int billNo, double billAmount, String custName, String custMobile, LocalDate custDob) {
+		super();
+		this.billNo = billNo;
+		this.billAmount = billAmount;
+		this.custName = custName;
+		this.custMobile = custMobile;
+		this.custDob = custDob;
+	}
+
+	public Bill(double billAmount, String custName, String custMobile, LocalDate custDob) {
+		super();
+		this.billAmount = billAmount;
+		this.custName = custName;
+		this.custMobile = custMobile;
+		this.custDob = custDob;
+	}
+	
+	
+	
+	
+}

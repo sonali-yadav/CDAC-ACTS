@@ -1,0 +1,13 @@
+127.0.0.1 - - [25/Nov/2019:22:02:00 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:02:04 +0530] "GET /OnlineVotingSystem/index.jsp HTTP/1.1" 200 2189
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:03:17 +0530] "GET /OnlineVotingSystem/index.jsp HTTP/1.1" 200 2189
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:03:18 +0530] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:09 +0530] "GET /OnlineVotingSystem/index.jsp HTTP/1.1" 200 2189
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:10 +0530] "GET /favicon.ico HTTP/1.1" 404 1085
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:32 +0530] "POST /OnlineVotingSystem/validate.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:33 +0530] "GET /OnlineVotingSystem/candidates.jsp HTTP/1.1" 200 3877
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:53 +0530] "POST /OnlineVotingSystem/status.jsp HTTP/1.1" 200 2217
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:56 +0530] "GET /OnlineVotingSystem/index.jsp HTTP/1.1" 200 2189
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:58 +0530] "POST /OnlineVotingSystem/validate.jsp HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:04:58 +0530] "GET /OnlineVotingSystem/status.jsp HTTP/1.1" 200 2231
+0:0:0:0:0:0:0:1 - - [25/Nov/2019:22:05:16 +0530] "GET /OnlineVotingSystem/index.jsp HTTP/1.1" 200 2189

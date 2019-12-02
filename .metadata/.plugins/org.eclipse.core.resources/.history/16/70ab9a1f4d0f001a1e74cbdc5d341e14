@@ -1,0 +1,18 @@
+package pojos;
+
+import java.time.LocalDate;
+
+public class Bill {
+
+	private static int billCounter;
+	private int billNo;
+	private double billAmount;
+	private String custName, custMobile;
+	private LocalDate custDob;
+	public Bill() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}
